@@ -1,0 +1,34 @@
+db: biu
+server:
+  port: 8888
+  servlet:
+    context-path: /api/v1
+    session:
+      cookie:
+        name: BIUSID
+spring:
+  profiles:
+    active: dev
+    include: druid,mybatisplus,shiro
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.103.212.217:3306/biu?characterEncoding=UTF-8&useSSL=false
+    username: router
+    password: 111111
+logging:
+  path: ./logs
+  level:
+    com.abc.dao: debug
+
+
+wx:
+  miniapp:
+    configs:
+      - appid: wx0a159bf1ae8eadbf
+        secret: 3de1de08ae9a223bc8a32bb7dcac81ea
+        token: #微信小程序消息服务器配置的token
+        aesKey: #微信小程序消息服务器配置的EncodingAESKey
+        msgDataFormat: JSON
